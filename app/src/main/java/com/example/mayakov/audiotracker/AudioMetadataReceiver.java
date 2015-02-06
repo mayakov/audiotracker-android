@@ -3,6 +3,7 @@ package com.example.mayakov.audiotracker;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 
 public class AudioMetadataReceiver extends BroadcastReceiver {
@@ -10,7 +11,7 @@ public class AudioMetadataReceiver extends BroadcastReceiver {
     static final class MetadataChangedPlayer {
         static final String SPOTIFY = "com.spotify.music.metadatachanged";
         static final String PLAY_MUSIC = "com.android.music.metachanged";
-        static final String RDIO = "com.rdio.android.metachanged";
+        static final String RDIO = "com.rdio.android.playstatechanged";
     }
 
     @Override
@@ -96,8 +97,8 @@ public class AudioMetadataReceiver extends BroadcastReceiver {
             Double  duration = intent.getDoubleExtra("duration", 2.5);
             Double  position = intent.getDoubleExtra("position", 2.5);
             String  rdioSourceKey = intent.getStringExtra("rdioSourceKey");
-            String  rdioTrackKey = intent.getStringExtra("rdioSourceKey");
-            String  albumArtist = intent.getStringExtra("rdioSourceKey");
+            String  rdioTrackKey = intent.getStringExtra("rdioTrackKey");
+            String  albumArtist = intent.getStringExtra("albumArtist");
 
             Log.i("METADATA", "isPlaying: " + Boolean.toString(isPlaying));
             Log.i("METADATA", "isPaused: " + Boolean.toString(isPaused));

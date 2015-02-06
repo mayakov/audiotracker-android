@@ -24,7 +24,7 @@
             <intent-filter>
                 <action android:name="com.spotify.music.metadatachanged"/>
                 <action android:name="com.android.music.metachanged"/>
-                <action android:name="com.rdio.android.metachanged"/>
+                <action android:name="com.rdio.android.playstatechanged"/>
             </intent-filter>
         </receiver>
 
